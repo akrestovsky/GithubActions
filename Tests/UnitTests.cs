@@ -31,5 +31,108 @@ namespace GithubActionsLab
         }
 
         // Implement 3 tests per operation, following a similar pattern as above
+        // Unit test for Subtract method
+
+        [Test]
+        public void Subtract_ValidAnastasiyaKrestovsky()
+        {
+            Assert.AreEqual(5, Program.Subtract("15", "10"));
+            Assert.AreEqual(2, Program.Subtract("10", "8"));
+            Assert.AreEqual(9, Program.Subtract("10", "1"));
+        }
+
+        [Test]
+        public void Subtract_InvalidAnastasiyaKrestovsky()
+        {
+            Assert.Throws<FormatException>(() => Program.Subtract("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Subtract("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Subtract("a", "a"));
+        }
+
+        [Test]
+        public void Subtract_NullAnastasiyaKrestovsky()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract(null, null));
+        }
+
+        // unit tests for Multiply method
+
+        [Test]
+        public void Multiply_ValidAnastasiyaKrestovsky()
+        {
+            Assert.AreEqual(9, Program.Multiply("3", "3"));
+            Assert.AreEqual(42, Program.Multiply("6", "7"));
+            Assert.AreEqual(63, Program.Multiply("7", "9"));
+        }
+
+        [Test]
+        public void Multiply_InvalidAnastasiyaKrestovsky()
+        {
+            Assert.Throws<FormatException>(() => Program.Multiply("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Multiply("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Multiply("a", "a"));
+        }
+
+        [Test]
+        public void Multiply_NullAnastasiyaKrestovsky()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply(null, null));
+        }
+
+        // unit tests for Divide method
+
+        [Test]
+        public void Divide_ValidAnastasiyaKrestovsky()
+        {
+            Assert.AreEqual(2, Program.Divide("10", "5"));
+            Assert.AreEqual(20, Program.Divide("100", "5"));
+            Assert.AreEqual(7, Program.Divide("63", "9"));
+        }
+
+        [Test]
+        public void Divide_InvalidAnastasiyaKrestovsky()
+        {
+            Assert.Throws<FormatException>(() => Program.Divide("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Divide("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Divide("a", "a"));
+        }
+
+        [Test]
+        public void Divide_NullAnastasiyaKrestovsky()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Divide("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Divide(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Divide(null, null));
+        }
+
+        // unit tests for Power method
+
+        [Test]
+        public void Power_ValidAnastasiyaKrestovsky()
+        {
+            Assert.AreEqual(128, Program.Power("2", "7"));
+            Assert.AreEqual(256, Program.Power("2", "8"));
+            Assert.AreEqual(512, Program.Power("2", "9"));
+        }
+
+        [Test]
+        public void Power_InvalidAnastasiyaKrestovsky()
+        {
+            Assert.Throws<FormatException>(() => Program.Power("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Power("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Power("a", "a"));
+        }
+
+        [Test]
+        public void Power_NullAnastasiyaKrestovsky()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Power("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Power(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Power(null, null));
+        }
     }
 }
